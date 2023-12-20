@@ -1,4 +1,19 @@
 import type { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
+
+const backfaceVisibility = plugin(({ addUtilities }) => {
+  const newUtilities = {
+    '.backface-visible': {
+      'backface-visibility': 'visible',
+      '-webkit-backface-visibility': 'visible',
+    },
+    '.backface-hidden': {
+      'backface-visibility': 'hidden',
+      '-webkit-backface-visibility': 'hidden',
+    },
+  }
+  addUtilities(newUtilities)
+})
 
 const config: Config = {
   content: [
@@ -15,6 +30,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [backfaceVisibility],
 }
 export default config
