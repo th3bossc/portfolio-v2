@@ -13,9 +13,10 @@ import Modal from "../Modal";
 const Projects = ({ data }: { data: projectsInterface[] }) => {
     const [current, setCurrent] = useState(1);
     const [detail, setDetail] = useState(false);
-    const [size, setSize] = useState(window.innerWidth);
+    const [size, setSize] = useState(0);
 
     useEffect(() => {
+        setSize(window.innerWidth);
         window.onresize = window.onload = () => setSize(window.innerWidth);
     }, [])
 
