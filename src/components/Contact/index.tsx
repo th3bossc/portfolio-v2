@@ -10,7 +10,6 @@ import { codeAnimation } from "@/animations";
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { useRouter } from "next/navigation";
 import EasterEgg from "../EasterEgg";
 library.add(fab);
 library.add(fas);
@@ -22,7 +21,6 @@ const Contact = ({ links }: {
 }) => {
     const { ref, inView } = useInView();
     const controls = useAnimation();
-    const router = useRouter();
     const [play, setPlay] = useState(false);
     useEffect(() => {
         if (inView)

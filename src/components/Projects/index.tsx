@@ -1,5 +1,5 @@
 import PageWrapper from "@/components/PageWrapper";
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useState, useEffect } from "react";
 import Card from "../Card";
 import SmallCard from "../SmallCard";

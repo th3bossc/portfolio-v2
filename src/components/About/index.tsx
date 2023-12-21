@@ -1,11 +1,10 @@
 import PageWrapper from "@/components/PageWrapper";
 import { motion } from "framer-motion";
 import { welcomeAnimations, paragraphAnimations } from "@/animations";
-import { useMemo, useState, useEffect } from "react";
+import { useMemo } from "react";
 import { IBM_Plex_Mono } from "next/font/google";
 import Chip from "../Chip";
 import { techStackInterface } from "@/types";
-import Loading from "../Loading";
 const ibmPlexMono = IBM_Plex_Mono({ subsets: ['latin'], weight: ['400', '700'] });
 
 const About = ({ techStack }: { techStack: techStackInterface[] }) => {
@@ -19,8 +18,8 @@ const About = ({ techStack }: { techStack: techStackInterface[] }) => {
 
 
     return (
-        <PageWrapper className="p-10 md:p-24 h-screen relative ">
-            <div className="absolute w-screen bottom-48 flex flex-col gap-4">
+        <PageWrapper className=" h-screen relative w-screen">
+            <div className="p-10 md:p-24 absolute w-full bottom-48 flex flex-col gap-4">
                 <motion.h1
                     className="text-3xl md:text-9xl font-bold"
                     initial="hidden"
