@@ -2,6 +2,8 @@ import ProjectTitle from "../ProjectTitle";
 import Chip from "../Chip";
 import Link from "../Link";
 import { chipInterface, linksInterface } from "@/types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Modal = ({
     title,
@@ -22,7 +24,13 @@ const Modal = ({
         <>
             <div className="w-[90dvw] h-[90dvh] bg-neutral-200 rounded text-black p-4 flex flex-col items-center pt-8 gap-4 relative overflow-scroll">
                 <div className="h-fit w-full p-4 flex flex-col items-center">
-                    <ProjectTitle title={title} href={mainLink} />
+                    <div className="flex items-center gap-2">
+                        <ProjectTitle
+                            title={title}
+                            href={mainLink}
+                        />
+                        <FontAwesomeIcon icon={faArrowRight} />
+                    </div>
                     <h3 className="text-xl text-neutral-500"> {time} </h3>
                 </div>
                 <div className="bg-gray-300 p-4">

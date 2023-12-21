@@ -19,8 +19,8 @@ const About = ({ techStack }: { techStack: techStackInterface[] }) => {
 
 
     return (
-        <PageWrapper className="p-10 md:p-24 h-screen">
-            <div className="mt-64 flex flex-col gap-4">
+        <PageWrapper className="p-10 md:p-24 h-screen relative ">
+            <div className="absolute w-screen bottom-48 flex flex-col gap-4">
                 <motion.h1
                     className="text-3xl md:text-9xl font-bold"
                     initial="hidden"
@@ -75,7 +75,7 @@ const About = ({ techStack }: { techStack: techStackInterface[] }) => {
                         <div className="w-full h-full flex flex-wrap text-3xl justify-center items-center">
                             {
                                 techStack.map((tech, index) => (
-                                    <Chip key={index} {...tech} iconSize="6x" className="text-neutral-200" />
+                                    <Chip key={index} {...tech} iconSize="sm" className="text-neutral-200" />
                                 ))
                             }
                         </div>

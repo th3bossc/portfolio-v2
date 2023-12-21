@@ -9,6 +9,8 @@ import Chip from "../Chip";
 import Link from "../Link";
 import Image from "next/image";
 import bg from "/public/admin-bg.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Card = ({
     index,
@@ -54,10 +56,13 @@ const Card = ({
             >
                 <div className="h-full flex flex-col gap-4 p-8">
                     <div className="title--info w-fit">
-                        <ProjectTitle
-                            title={title}
-                            href={mainLink}
-                        />
+                        <div className="flex items-center gap-2">
+                            <ProjectTitle
+                                title={title}
+                                href={mainLink}
+                            />
+                            <FontAwesomeIcon icon={faArrowRight} />
+                        </div>
                         <h3 className="text-xl text-neutral-500"> {time} </h3>
                     </div>
                     <div className="h-full">
@@ -69,7 +74,7 @@ const Card = ({
                                 <div className="flex flex-wrap justify-center items-center gap-2 h-fit">
                                     {
                                         chips.map((chip, index) => (
-                                            <Chip key={index} {...chip} className="text-gray-700" />
+                                            <Chip key={index} {...chip} iconSize="xl" className="text-gray-700" />
                                         ))
                                     }
                                 </div>

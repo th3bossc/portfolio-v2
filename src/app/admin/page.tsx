@@ -7,6 +7,7 @@ const UpdateProfile = () => {
     const [formData, setFormData] = useState({ password: "", confirmPassword: "" });
     const [updated, setUpdated] = useState(false);
     const [error, setError] = useState(false);
+
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         console.log(formData);
         setFormData({ ...formData, [e.target.id]: e.target.value });

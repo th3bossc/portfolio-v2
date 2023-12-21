@@ -57,7 +57,7 @@ const Chip = ({
                     mass: 0.1,
                 }}
             >
-                <FontAwesomeIcon icon={[iconType, icon]} fontSize={iconSize ? iconSize : "xl"} />
+                <FontAwesomeIcon icon={[iconType, icon]} size={iconSize ? iconSize : "xs"} />
             </motion.div>
             {
                 tooltip && (

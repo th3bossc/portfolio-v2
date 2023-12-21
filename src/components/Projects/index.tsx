@@ -79,7 +79,7 @@ const Projects = ({ data }: { data: projectsInterface[] }) => {
                         </motion.button>
 
                         <motion.button
-                            className="absolute right-10 rounded-full bg-neutral-200 text-red-900 p-5"
+                            className="absolute right-10 rounded-full bg-neutral-200 text-red-900 p-5 disabled:opacity-0"
                             onClick={() => setCurrent(prev => prev + 1)}
                             disabled={current === data.length - 2}
                             whileHover={{ scale: 1.05 }}

@@ -5,11 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion, useAnimation } from "framer-motion";
 import { linkAnimations } from "@/animations";
 import useInView from "@/hooks/isInView";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { codeAnimation } from "@/animations";
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { useRouter } from "next/navigation";
+import EasterEgg from "../EasterEgg";
 library.add(fab);
 library.add(fas);
 
@@ -20,7 +22,8 @@ const Contact = ({ links }: {
 }) => {
     const { ref, inView } = useInView();
     const controls = useAnimation();
-
+    const router = useRouter();
+    const [play, setPlay] = useState(false);
     useEffect(() => {
         if (inView)
             controls.start("visible");
@@ -30,6 +33,11 @@ const Contact = ({ links }: {
 
     return (
         <PageWrapper className="flex flex-col justify-center items-center h-screen">
+            {
+                play && (
+                    <EasterEgg back={setPlay} />
+                )
+            }
             <motion.div
                 className={"text-xl md:text-3xl flex flex-col w-fit h-fit p-4 " + ibmPlexMono.className}
                 ref={ref}
@@ -84,6 +92,7 @@ const Contact = ({ links }: {
                     <motion.span
                         className="text-md md:text-2xl ms-2 ps-1 pe-1 bg-white"
                         animate={{ opacity: [0, 1, 0] }}
+                        onClick={() => setPlay(true)}
                         transition={{
                             repeat: Infinity,
                             duration: 1,
