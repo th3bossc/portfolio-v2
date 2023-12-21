@@ -32,7 +32,7 @@ const EasterEgg = ({
                     ref={scope}
                     onDragEnd={handleDragEnd}
                     whileTap={count >= -1 ? { scale: 0.9 } : { scale: 1 }}
-                    onClick={() => setCount(prev => (prev >= 0) && prev + 1)}
+                    onClick={() => setCount(prev => prev + (prev >= 0 ? 1 : 0))}
                 >
                     🐰
                 </motion.h1>
