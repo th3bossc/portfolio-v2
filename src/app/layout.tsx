@@ -17,6 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" style={{ scrollBehavior: 'smooth' }}>
+      <head>
+        <link rel="icon" href="/favicon.png" sizes="any" />
+      </head>
       <body className={catamaran.className + ' relative bg-neutral-900 overflow-x-hidden text-red-200'}>
 
         {children}

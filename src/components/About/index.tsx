@@ -44,9 +44,9 @@ const About = ({ techStack }: { techStack: techStackInterface[] }) => {
                     }
                 </motion.h1>
 
-                <div className="flex justify-center items-center gap-4">
+                <div className="flex justify-center items-center gap-4" >
                     <motion.div
-                        className="w-full h-ful"
+                        className="w-full h-full"
                         initial="hidden"
                         animate="visible"
                         transition={{

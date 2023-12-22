@@ -1,8 +1,13 @@
 import { getServerSession } from "next-auth";
+import { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { options } from "../api/auth/[...nextauth]/options";
 import AdminNavbar from "@/components/AdminNavbar";
 
+export const metadata: Metadata = {
+    title: 'Portfolio | Admin',
+    description: 'Admin panel for the portfolio',
+}
 const layout = async ({ children }) => {
     const session = await getServerSession(options);
     if (!session) {

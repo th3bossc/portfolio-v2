@@ -2,6 +2,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { linksInterface } from "@/types";
+import logo from "/public/logo.png";
+import Image from "next/image";
 
 const navItems: linksInterface[] = [
     { name: "About", href: "#about" },
@@ -14,8 +16,11 @@ const Navbar = ({ current }: { current: string }) => {
     const [hovered, setHovered] = useState<string | null>(null);
 
     return (
-        <nav className="backdrop-blur text-white flex justify-center items-center gap-10 sticky w-fit h-16 z-10 ps-4 pe-4">
+        <nav className="backdrop-blur-xl text-white flex justify-center items-center gap-10 sticky w-fit h-16 z-10 ps-4 pe-4 rounded-lg">
             <div className="flex justify-center items-center gap-2">
+                <Link href="/">
+                    <Image src={logo} alt="logo" width={40} height={40} />
+                </Link>
                 {
                     navItems.map((item, index) => {
                         return (
