@@ -93,7 +93,7 @@ const Card = ({
             </motion.div>
             <div className="flex items-center justify-center h-full w-full h-full overflow-hidden">
                 <Image src={bg} alt="bg" layout="fill" objectFit="cover" className="z-[-1000]" />
-                <h1 className="text-9xl font-bold text-zinc-200">{title}</h1>
+                <h1 className="text-6xl font-bold text-zinc-200">{title}</h1>
             </div>
         </motion.div >
     )

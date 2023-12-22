@@ -19,9 +19,9 @@ const About = ({ techStack }: { techStack: techStackInterface[] }) => {
 
     return (
         <PageWrapper className=" h-screen relative w-screen">
-            <div className="p-10 md:p-24 absolute w-full bottom-48 flex flex-col gap-4">
+            <div className="p-10 xl:p-24 absolute w-full bottom-48 md:bottom-10 lg:bottom-48 flex flex-col gap-4">
                 <motion.h1
-                    className="text-3xl md:text-9xl font-bold"
+                    className="text-3xl md:text-6xl xl:text-9xl font-bold"
                     initial="hidden"
                     animate="visible"
                     transition={{
@@ -57,7 +57,7 @@ const About = ({ techStack }: { techStack: techStackInterface[] }) => {
                         {
                             paragraphText.map((text, index) => (
                                 <motion.p
-                                    className="text-lg max-md:text-sm"
+                                    className="text-lg max-xl:text-sm"
                                     key={index}
                                     variants={paragraphAnimations}
                                 >
@@ -68,7 +68,7 @@ const About = ({ techStack }: { techStack: techStackInterface[] }) => {
                     </motion.div>
 
                     <div className="w-full flex flex-col">
-                        <span className={"text-lg md:text-3xl font-bold w-full p-2 text-center " + ibmPlexMono.className}>
+                        <span className={"text-lg xl:text-3xl font-bold w-full p-2 text-center " + ibmPlexMono.className}>
                             &lt;My Stack /&gt;
                         </span>
                         <div className="w-full h-full flex flex-wrap text-3xl justify-center items-center">
